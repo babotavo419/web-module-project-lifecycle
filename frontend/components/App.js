@@ -28,8 +28,6 @@ class App extends React.Component {
           error: err.response.data.message
         })
       })
-    }
-    )
   }
   onTodoFormSubmit = evt => {
     evt.preventDefault()
