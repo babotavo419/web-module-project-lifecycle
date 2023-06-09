@@ -19,6 +19,8 @@ class App extends React.Component {
     axios.post(URL, {name: this.state.todoNameInput})
       .then(res => {
         this.fetchAllTodos()
+        this.setState({
+          ...this.state, todoNameInput: ''
       })
       .catch(err => {
         this.setState({
@@ -26,6 +28,8 @@ class App extends React.Component {
           error: err.response.data.message
         })
       })
+    }
+    )
   }
   onTodoFormSubmit = evt => {
     evt.preventDefault()
